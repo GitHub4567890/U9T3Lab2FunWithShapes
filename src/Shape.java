@@ -10,15 +10,17 @@ public class Shape {
   // public constants
   public static final String RECTANGLE = "Rectangle"; // constant for rectangle
   public static final String OVAL = "Oval";           // constant for oval
+  public static final String ARC = "Arc";
+  public static final String LINE = "Line";
 
   // private instance variables
   private Color color; // color to draw shape in
-  private Point p1; // first point; a Point object has an x and y attribute, e.g. p1.x and p1.y
+  private Point p1; // first point; a Point object has ans x and y attribute, e.g. p1.x and p1.y
   private Point p2; // second point; a Point object has an x and y attribute, e.g. p2.x and p2.y
 
   /** Constructor */
   public Shape() {
-    color = Color.black;
+    color = Color.blue;
     p1 = new Point();
     p2 = new Point();
   }
@@ -58,7 +60,15 @@ public class Shape {
   public int getHeight() {
     return Math.max(p1.y, p2.y) - getMinY() + 1;
   }
-  
+
+  public Point getP1() {
+    return p1;
+  }
+
+  public Point getP2() {
+    return p2;
+  }
+
   /**
    * Method to set the point values for point1 that defines the shape
    * @param newX    the new x value for point 1
